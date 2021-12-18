@@ -32,7 +32,7 @@ function createMenuItem(value, index, element) {
 window.addEventListener('load', function () {
     let storage = localStorage.getItem('compras');
     if (storage) {
-        const listarray = ["test1", "test2", "test3", "test4", "test5"]
+        const listarray = ["test1", "test2", "test3", "test4", "test5", "test1", "test2", "test3", "test4", "test5"]
         listarray.forEach((v, k) => console.log(`${v} - ${k}`))
 
         let ol = document.createElement("lo")
