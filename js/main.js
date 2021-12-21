@@ -1,5 +1,6 @@
 btn_comprar.addEventListener('click', function () {
     let name_product = compra.value;
+    if(!name_product) return;
     addLocalStorage(name_product);
     loadStorage()
     compra.value = ''

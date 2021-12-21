@@ -61,7 +61,7 @@ input:focus{
 
 #btn_comprar{
     margin-top: 30px;
-    background: #1b461bbd;
+    background: #102b10bd;
     color: #fff;
     padding: 10px 35px;
     border: none;
@@ -70,8 +70,8 @@ input:focus{
 }
 
 #btn_comprar:hover{
-    transition: ease-in 1s;
-    background: #1b461b;
+    transition: ease-in 0.5s;
+    background: #259225;
 }
 
 .compra{
@@ -117,4 +117,10 @@ button.btn-reset{
     color: #fff9;
     border-radius: 5px;
     cursor: pointer;
+}
+
+button.btn-reset:hover, button.btn-items:hover{
+    background: #a71919;
+    transition: ease-in-out 0.5s;
+    color: #fff;
 }
