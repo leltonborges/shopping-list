@@ -1,8 +1,8 @@
 btn_comprar.addEventListener('click', function () {
     let name_product = compra.value;
-    console.log(name_product);
     addLocalStorage(name_product);
-    removeLocalStorage(null);
+    // removeLocalStorage(null);
+    loadStorage()
 })
 
 const addLocalStorage = (value) => {
@@ -15,12 +15,12 @@ const addLocalStorage = (value) => {
     localStorage.setItem('compras', storage);
 }
 
-const removeLocalStorage = (value) => {
-    let storage = localStorage.getItem('compras');
-    let storageSplit = storage.split(';')
+// const removeLocalStorage = (value) => {
+//     let storage = localStorage.getItem('compras');
+//     let storageSplit = storage.split(';')
 
-    console.log(storageSplit)
-}
+//     console.log(storageSplit)
+// }
 
 function createMenuItem(value, index, element) {
     let li = document.createElement(element);
@@ -30,21 +30,34 @@ function createMenuItem(value, index, element) {
 }
 
 window.addEventListener('load', function () {
+    loadStorage()
+})
+
+const loadStorage = () => {
     let storage = localStorage.getItem('compras');
+    console.log(`localstorage: ${storage}`);
     if (storage) {
-        const listarray = ["test1", "test2", "test3", "test4", "test5", "test1", "test2", "test3", "test4", "test5"]
+        const listarray = storage.split(";");
         listarray.forEach((v, k) => console.log(`${v} - ${k}`))
 
-        let ol = document.createElement("lo")
+        let ol = document.createElement("ol")
         ol.classList.add('list')
+        ol.id="elements"
         listarray.forEach((v, k) => {
             ol.appendChild(createMenuItem(v, k, 'li'))
         })
 
         const list = document.querySelector('#list');
         const p = document.querySelector('#list p')
-        list.removeChild(p)
+        let getOl = document.querySelector("ol#elements")
+
+        if(getOl) {
+            list.removeChild(getOl)
+            console.log("removeu ol");
+        }
+        
+        if(p) list.removeChild(p)
+
         list.appendChild(ol)
     }
-
-})
+}
