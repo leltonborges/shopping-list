@@ -11,6 +11,12 @@ compra.addEventListener('keyup', function(event){
     if(event.keyCode === 13) btn_comprar.click()
 })
 
+btn_reset.addEventListener('click', function(e){
+    e.preventDefault()
+    localStorage.removeItem('compras')
+    loadStorage()
+})
+
 const addLocalStorage = (value) => {
     let storage = localStorage.getItem('compras');
     if (storage) {

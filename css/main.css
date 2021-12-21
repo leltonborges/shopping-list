@@ -107,4 +107,14 @@ button.btn-items{
     padding: 3px 20px;
     border-radius: 5px;
     cursor: pointer;
+    color: #fff9;
+}
+
+button.btn-reset{
+    border: none;
+    background: #851515e5;
+    padding: 10px 20px;
+    color: #fff9;
+    border-radius: 5px;
+    cursor: pointer;
 }
