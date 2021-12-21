@@ -26,7 +26,7 @@ main {
 }
 
 section {
-    width: 50vw;
+    width: 60vw;
     background: var(--bg-secundary);
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     margin: 2rem 2rem;
@@ -92,6 +92,13 @@ li {
     font-size: 1.2rem;
     margin: 5px 2px;
     /* display: inline-block; */
+}
+
+ol{
+    column-count: 2;
+    column-rule: 1px solid #383838;
+    column-gap: 20px;
+    text-align: center;
 }
 
 button.btn-items{
