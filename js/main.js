@@ -60,7 +60,6 @@ function createButton(id = 0) {
 
 window.addEventListener('load', function () {
     loadStorage()
-
 })
 
 const loadStorage = () => {
