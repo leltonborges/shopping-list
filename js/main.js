@@ -19,9 +19,9 @@ const addLocalStorage = (value) => {
 const removeItem = (value) => {
     let storage = localStorage.getItem('compras');
     let storageSplit = storage.split(';')
-    
+
     storageSplit.splice(value, 1);
-    
+
     localStorage.setItem('compras', storageSplit.join(';'))
     loadStorage()
 }
@@ -38,7 +38,7 @@ function createButton(id = 0) {
     let button = document.createElement('button')
     button.textContent = "remove"
     button.id = `item-${id}`
-    button.addEventListener('click', function(event){
+    button.addEventListener('click', function (event) {
         event.preventDefault()
         removeItem(id)
     })
@@ -48,7 +48,7 @@ function createButton(id = 0) {
 
 window.addEventListener('load', function () {
     loadStorage()
-    
+
 })
 
 const loadStorage = () => {
@@ -72,5 +72,14 @@ const loadStorage = () => {
         if (p) list.removeChild(p)
 
         list.appendChild(ol)
+    } else {
+        let p = document.createElement('p')
+        p.textContent = 'Lista vazia'
+        const list = document.querySelector('#list');
+        const ol = document.querySelector('#elements')
+
+        if (ol) list.removeChild(ol)
+        list.appendChild(p)
+
     }
 }
